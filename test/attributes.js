@@ -284,7 +284,7 @@ describe('Attributes', function () {
     });
 
     it('should validate if field is undefined', function () {
-      return this.validator.validate({'the_field':undefined}, {'type': 'object', 'properties':{'the_field': {'enum': ['foo', 'bar', 'baz']}}}).valid.should.b
+      return this.validator.validate({'the_field':undefined}, {'type': 'object', 'properties':{'the_field': {'enum': ['foo', 'bar', 'baz']}}}).valid.should.be.true
     });
 
     it('should not validate if a required field is undefined', function () {
