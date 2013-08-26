@@ -263,6 +263,14 @@ describe('Attributes', function () {
       return this.validator.validate(3, {'type': 'string', 'enum': [1, 2]}).valid.should.be.false;
     });
 
+    it('should validate if value is undefined', function () {
+      return this.validator.validate(undefined, {'enum': ['foo', 'bar', 'baz']}).valid.should.be.true;
+    });
+
+    it('should not validate if a required field is ommited', function () {
+      return this.validator.validate(undefined, {'enum': ['foo', 'bar', 'baz'], 'required': true}).valid.should.be.false;
+    });
+
     it('should validate if value is undefined but defaults to one of the enum values', function () {
       return this.validator.validate(undefined, {'enum': ['foo', 'bar', 'baz'], 'default': 'baz'}).valid.should.be.true;
     });
@@ -273,6 +281,10 @@ describe('Attributes', function () {
 
     it('should not validate if a required field is ommited', function () {
       return this.validator.validate({}, {'type': 'object', 'properties':{'the_field': {'enum': ['foo', 'bar', 'baz'], 'required': true}}}).valid.should.be.false;
+    });
+
+    it('should validate if field is undefined', function () {
+      return this.validator.validate({'the_field':undefined}, {'type': 'object', 'properties':{'the_field': {'enum': ['foo', 'bar', 'baz']}}}).valid.should.b
     });
 
     it('should not validate if a required field is undefined', function () {
