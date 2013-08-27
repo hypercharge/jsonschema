@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/tdegrunt/jsonschema.png)](http://travis-ci.org/tdegrunt/jsonschema)
+[![Build Status](https://secure.travis-ci.org/hypercharge/jsonschema.png)](http://travis-ci.org/hypercharge/jsonschema)
 
 # jsonschema
 Simple and fast [JSON schema](http://tools.ietf.org/html/draft-zyp-json-schema-03) validator.
